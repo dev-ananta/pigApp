@@ -3,6 +3,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var turnScore = 0
     @State private var gameScore = 0
+    @State private var randomValue = 0
+    @State private var rotation = 0.0
     
     var body: some View {
         ZStack {
@@ -11,6 +13,14 @@ struct ContentView: View {
             VStack {
                 Image("Pig").resizable().frame(width:150, height: 150)
                 CustomText(text: "Pig")
+                
+                Image("pips \(randomValue)")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .rotationEffect(.degrees(rotation))
+                    .rotation3DEffect(.degrees(rotation), axis: (x: 1, y: 1, z: 0))
+                    .padding(50)
+                
                 CustomText(text: "Turn Score: \(turnScore)")
                 CustomText(text: "Game Score: \(gameScore)")
                 
