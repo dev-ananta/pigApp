@@ -7,7 +7,7 @@ struct ContentView: View {
             
             VStack {
                 Image("Pig").resizable().frame(width:150, height: 150)
-                Text(Pig)
+                Text("Pig")
                 Spacer()
             }
         }
